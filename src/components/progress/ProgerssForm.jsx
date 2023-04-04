@@ -153,7 +153,7 @@ const FormComponent = () => {
   };
   return (
     <div className="form-wrapper">
-      <Form form={form} onFinish={onFinish}>
+      <Form action="mail-validation.php" method="post" form={form} onFinish={onFinish}>
         {steps[currentStep].content}
         <div className="steps-action">
           {currentStep  > 0 && (

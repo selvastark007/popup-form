@@ -4,9 +4,9 @@
 $getName = $_REQUEST['quotename'];
 $getEmail = $_REQUEST['quoteemail'];
 $getTel = $_REQUEST['quotetel'];
-$getZipcode = $_REQUEST['quotezipcode'];
+// $getZipcode = $_REQUEST['quotezipcode'];
 $getSelect = $_REQUEST['quoteselect'];
-$getContent = $_REQUEST['quotecontent'];
+// $getContent = $_REQUEST['quotecontent'];
 $getDateTime = date('Y/m/d h:i:sa');
 $getCC = 'slmn5900@gmail.com';
 
@@ -45,13 +45,8 @@ $message = '<html>
                     <td>'.$getTel.'</td>
                 </tr>
                 <tr>
-                    <td>Zipcode</td>
-                    <td>'.$getZipcode.'</td>
-                </tr>
-                
-                <tr>
-                    <td>Messages</td>
-                    <td>'.$getContent.'</td>
+                    <td>Services Required </td>
+                    <td>'.$getSelect.'</td>
                 </tr>
                 </table>
             </body>
@@ -62,7 +57,7 @@ if(mail($to, $subject, $message, $headers)){
     // Subject of confirmation email.
     $conf_subject = 'Your recent enquiry';
     // Who should the confirmation email be from?   
-    $conf_sender = 'securitaz <no-reply@support@securitaz.com>';
+    $conf_sender = 'webdads2u <no-reply@webdads2u.com>';
     $msg = $getName. ",\n\nThank you for your recent enquiry. A member of our 
     team will respond to your message as soon as possible.";
     if(mail( $getEmail, $conf_subject, $msg, 'From: ' . $conf_sender )) {
