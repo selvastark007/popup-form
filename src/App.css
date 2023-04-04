@@ -1,38 +1,88 @@
 .App {
+  width: 100%;
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  /* text-align: center; */
+  /* align-items: center; */
+  padding: 0rem 4rem 0;
+  position: relative;
+  background: url("./assets/background.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.App .message-content {
+  margin-bottom: 2rem;
+}
+
+.App .message-content .image {
+  text-align: center;
+  
+}
+.App .message-content img {
+  width: 165px;
+  object-fit: contain;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.App .message-content .title {
+  text-align: center;
+}
+.message-content .title h4 {
+  color: black !important;
+}
+
+.App .progerss-form {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.close-button {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+}
+.close-button svg {
+  width: 35px;
+  height: 35px;
+  background: linear-gradient(90deg, #871752 20%, #262250 40%) !important;
+  border-radius: 50%;
+  color: #fff;
+}
+.close-button button {
+  border: none;
+  border-radius: 50%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.content-details {
+  margin-top: 2.7rem !important;
+  background: linear-gradient(90deg, #871752 20%, #262250 40%) !important;
+  border-top-right-radius: 150px;
+  border-top-left-radius: 50px;
+  padding-top: 0.5rem;
   color: white;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+.content-details .social-icons i {
+  padding: 10px;
+  cursor: pointer;
+}
+.content-details .social-icons i:hover svg {
+  transform: scale(1.2);
+  /* color: #871752; */
+  transition: 0.5s ease;
+}
+.content-sub-details small {
+  font-size: 12px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media screen and (max-width: 992px) {
+  .content-details {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    width: 100% !important;
+    padding: 10px;
   }
 }
