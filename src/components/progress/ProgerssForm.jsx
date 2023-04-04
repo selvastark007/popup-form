@@ -17,7 +17,7 @@ const FormComponent = () => {
         content: (
           <Form.Item
             label="Name"
-            name="name"
+            name="quotename"
             rules={[
               {
                 required: true,
@@ -25,7 +25,7 @@ const FormComponent = () => {
               },
             ]}
           >
-            <Input placeholder="Name" />
+            <Input placeholder="Name" name="quotename" />
           </Form.Item>
         ),
       },
@@ -34,7 +34,7 @@ const FormComponent = () => {
         content: (
           <Form.Item
             label="Email"
-            name="email"
+            name="quoteemail"
             rules={[
               {
                 required: true,
@@ -42,7 +42,7 @@ const FormComponent = () => {
               },
             ]}
           >
-            <Input placeholder="Email" />
+            <Input placeholder="Email" name="quoteemail" />
           </Form.Item>
         ),
       },
@@ -51,7 +51,7 @@ const FormComponent = () => {
         content: (
           <Form.Item
             label="Phone"
-            name="phone"
+            name="quotetel"
             rules={[
               {
                 required: true,
@@ -59,7 +59,7 @@ const FormComponent = () => {
               },
             ]}
           >
-            <Input placeholder="Phone" />
+            <Input placeholder="Phone" name="quotetel" />
           </Form.Item>
         ),
       },
@@ -78,7 +78,7 @@ const FormComponent = () => {
           >
             <div className="services">
               <h3 style={{ marginBottom: "1rem" }}>Services</h3>
-              <Checkbox.Group className="service-head">
+              <Checkbox.Group className="service-head" name="quoteselect">
                 <Checkbox value="Website Development">
                   Website Development
                 </Checkbox>
