@@ -17,7 +17,7 @@ import { FiLinkedin } from "react-icons/fi";
 
 
   const handleButtonClick = () => {
-    window.open("https://www.webdads.com", "_tarket");
+    window.open("https://www.webdads.com", "_target");
   };
 
 function App() {
