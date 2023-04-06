@@ -1,6 +1,5 @@
 import { useState, useMemo, useCallback } from "react";
 import { Button, Checkbox, Form, Input } from "antd";
-import axios from "axios";                                                                                                                                                                                                                                                                                                           
 import "./Form.css";
 
 const FormComponent = () => {
@@ -17,15 +16,19 @@ const FormComponent = () => {
         content: (
           <Form.Item
             label="Name"
-            name="quotename"
+            name="name"
             rules={[
               {
                 required: true,
-                message: "Please enter your name...",
+                message: "Please enter your name",
+              },
+              {
+                min: 3,
+                message: "Name must be at least 3 characters",
               },
             ]}
           >
-            <Input placeholder="Name" name="quotename" />
+            <Input placeholder="Name" name="name" />
           </Form.Item>
         ),
       },
@@ -34,15 +37,19 @@ const FormComponent = () => {
         content: (
           <Form.Item
             label="Email"
-            name="quoteemail"
+            name="email"
             rules={[
               {
                 required: true,
-                message: "Please enter your email...",
+                message: "Please enter your email",
+              },
+              {
+                type: "email",
+                message: "Please enter a valid email",
               },
             ]}
           >
-            <Input placeholder="Email" name="quoteemail" />
+            <Input placeholder="Email" name="email" />
           </Form.Item>
         ),
       },
@@ -51,15 +58,19 @@ const FormComponent = () => {
         content: (
           <Form.Item
             label="Phone"
-            name="quotetel"
+            name="phone"
             rules={[
               {
                 required: true,
-                message: "Please enter your phone number...",
+                message: "Please enter your phone number",
+              },
+              {
+                pattern: /^\d{10}$/,
+                message: "Please enter a valid phone number",
               },
             ]}
           >
-            <Input placeholder="Phone" name="quotetel" />
+            <Input placeholder="Phone" name="phone" />
           </Form.Item>
         ),
       },
@@ -72,13 +83,13 @@ const FormComponent = () => {
             rules={[
               {
                 required: true,
-                message: "Please select at least one service...",
+                message: "Please select at least one service",
               },
             ]}
           >
             <div className="services">
               <h3 style={{ marginBottom: "1rem" }}>Services</h3>
-              <Checkbox.Group className="service-head" name="quoteselect">
+              <Checkbox.Group className="service-head" name="services">
                 <Checkbox value="Website Development">
                   Website Development
                 </Checkbox>
@@ -123,7 +134,6 @@ const FormComponent = () => {
   }, []);
 
   const onFinish = async () => {
-   
     setLoading(true);
     const data = {
       name: formData.name,
@@ -131,6 +141,8 @@ const FormComponent = () => {
       phone: formData.phone,
       services: formData.services,
     };
+
+    console.log(data); // log the form data to the console
 
     fetch("/submit-form", {
       method: "POST",
